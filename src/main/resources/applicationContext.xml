@@ -25,7 +25,8 @@
         <property name="cacheSeconds" value="60"/>
     </bean>
 
-    <import resource="applicationContext-*.xml"/>
+    <import resource="applicationContext-database.xml"/>
+    <import resource="mvc-dispatcher-servlet.xml"/>
 
     <bean id="multipartResolver"
           class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

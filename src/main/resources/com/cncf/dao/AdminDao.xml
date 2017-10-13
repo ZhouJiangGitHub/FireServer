@@ -5,21 +5,13 @@
     <sql id="fields">
         adminId,
         adminName,
-        password,
-        accessToken,
-        expireTime,
-        createTime,
-        updateTime
+        password
     </sql>
 
     <resultMap id="admin" type="com.cncf.entity.Admin">
         <id column="adminId" property="adminId"/>
         <id column="adminName" property="adminName"/>
         <id column="password" property="password"/>
-        <id column="accessToken" property="accessToken"/>
-        <id column="expireTime" property="expireTime"/>
-        <id column="createTime" property="createTime"/>
-        <id column="updateTime" property="updateTime"/>
     </resultMap>
 
 
@@ -32,11 +24,7 @@
         (
         #{adminId},
         #{adminName},
-        #{password},
-        #{accessToken},
-        #{expireTime},
-        #{createTime},
-        #{updateTime}
+        #{password}
         )
     </insert>
 
@@ -46,22 +34,5 @@
         FROM admin
         WHERE adminName = #{0}
     </select>
-
-
-    <select id="getAdminByAccessToken" resultType="com.cncf.entity.Admin">
-        select
-        <include refid="fields"></include>
-        from admin
-        where accessToken = #{0}
-    </select>
-
-    <update id="updateToken" parameterType="com.cncf.entity.Admin">
-        UPDATE admin
-        SET
-        accessToken=#{accessToken},
-        expireTime=#{expireTime}
-        WHERE adminName = #{adminName}
-    </update>
-
 
 </mapper>

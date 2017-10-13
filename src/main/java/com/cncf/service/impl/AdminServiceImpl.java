@@ -8,9 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by zj on 2017/10/9.
- */
 @Service
 public class AdminServiceImpl implements AdminService {
 
@@ -20,16 +17,6 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Admin getAdminByName(String adminName) {
         return adminDao.getAdminByName(adminName);
-    }
-
-    @Override
-    public Admin getAdminByAccessToken(String accessToken) {
-        return adminDao.getAdminByAccessToken(accessToken);
-    }
-
-    @Override
-    public boolean updateAccessToken(Admin admin) {
-        return adminDao.updateToken(admin);
     }
 
     @Override

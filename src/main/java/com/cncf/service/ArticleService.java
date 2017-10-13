@@ -1,12 +1,10 @@
-package com.cncf.dao;
+package com.cncf.service;
 
 import com.cncf.entity.Article;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-public interface ArticleDao {
+public interface ArticleService {
     boolean deleteById(int id);
 
     boolean insertArticle(Article article);
